@@ -1,0 +1,20 @@
+#include(iostream.h>
+using namespace std;
+void printKLengthString(char set[], string sequence, int n, int k) {
+   if (k == 0){
+      cout<<sequence<<"\t";
+      return;
+   }
+   for (int i = 0; i < n; i++){
+      string newSequence;
+      newSequence=sequence+set[i];
+      printKLengthString(set, newSequence, n, k - 1);
+   }
+}
+int main() {
+   char set[] = {'a', 'b'};
+   int n = 2;
+   int k = 3;
+   printKLengthString(set, "", n, k);
+   return 0;
+}
